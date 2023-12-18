@@ -17,15 +17,20 @@ html body{
     height: 25vh;
   }
 
+  header img {
+    width: 20rem;
+    height: 20rem;
+  }
+
   .container {
-    display: flex;
+    display: auto flexbox;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgba(250, 235, 215, 0.267);
     border-radius: 5px;
     width: 50vw;
-    height: 25vh;
+    height: 175vh;
     max-width: 80rem;
     margin: 2rem auto;
     padding: 4rem 2rem;
@@ -80,6 +85,18 @@ select {
     margin-bottom: 10px;
 }
 
+ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    width: 20vw;
+    height: 20vh;
+    max-width: 80rem;
+    margin: 2rem auto;
+    padding: 2rem 2rem;
+} 
+
+
 button {
     background-color: #ffffff;
     border: none;
@@ -118,10 +135,9 @@ button:hover {
     margin-top: 10px;
 }
 
-.img-album {
+img {
     width: 50px;
     height: 50px;
-    margin-right: 10px;
 }
 
 @media only screen and (min-width: 300px) {
@@ -135,5 +151,12 @@ button:hover {
       height: 20vh;
       align-items: center;
       justify-content: center;
+    }
+    ul {
+      width: 75%;
+      height: 20vh;
+      max-width: 80rem;
+      margin: 2rem auto;
+      padding: 2rem 2rem;
     }
   }
