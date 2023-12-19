@@ -30,7 +30,7 @@ html body{
     background-color: rgba(250, 235, 215, 0.267);
     border-radius: 5px;
     width: 50vw;
-    height: 175vh;
+    height: auto;
     max-width: 80rem;
     margin: 2rem auto;
     padding: 4rem 2rem;
