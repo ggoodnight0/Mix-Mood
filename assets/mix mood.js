@@ -170,4 +170,75 @@ function fetchQuote() {
             console.error('Error fetching quote:', error);
             quoteTextElement.textContent = 'Failed to fetch a quote. Please try again.';
         });
+
+function saveMoodAndQuotes(selectedMood, quotes) {
+    const dataToStore = {
+        mood: selectedMood,
+        quotes: quotes
+    };
+
+    localStorage.setItem('moodAndQuotes', JSON.stringify(dataToStore));
 }
+
+function getMoodAndQuotes() {
+    const storedData = localStorage.getItem('moodAndQuotes');
+
+    if (storedData) {
+        return JSON.parse(storedData);
+    } else {
+        return null;
+    }
+}
+
+
+moodSelect.addEventListener('change', () => {
+    const selectedMood = moodSelect.value;
+
+    fetchQuotes(selectedMood).then(quotes => {
+        saveMoodAndQuotes(selectedMood, quotes);
+
+        getPlaylist();
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const storedData = getMoodAndQuotes();
+
+    if (storedData) {
+        moodSelect.value = storedData.mood;
+        const selectedMood = storedData.mood;
+        const quotes = storedData.quotes;
+
+  
+        getPlaylist();
+    }
+});
+
+
+async function fetchQuotes(selectedMood) {
+    try {
+       
+        const quotes = await fetchMockQuotes(selectedMood);
+        return quotes;
+    } catch (error) {
+        console.error('Error fetching quotes:', error);
+        return [];
+    }
+}
+
+function fetchMockQuotes(selectedMood) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const mockQuotes = [
+                "Quote 1 for " + selectedMood,
+                "Quote 2 for " + selectedMood,
+                "Quote 3 for " + selectedMood
+            ];
+            resolve(mockQuotes);
+        }, 1000);
+    });
+}
+
+}
+
