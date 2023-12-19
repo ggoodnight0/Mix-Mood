@@ -29,7 +29,9 @@ Open the application.
 Click on the dropdown to select your current mood.
 The app will display a Spotify playlist and a YouTube video playlist, along with an inspirational quote that matches your selected or suggested mood.
 
-*screenshots
+![Alt text](assets/ggoodnight0.github.io_Mix-Mood_.png)
+\https://ggoodnight0.github.io/Mix-Mood/
+
 
 # Credits
 Spotify API
